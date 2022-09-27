@@ -53,7 +53,7 @@ function consultaApi(moneda, criptomonedas) {
 
     fetch (url)
         .then(respuesta => respuesta.json())
-        .then(datos => mostrarCotizacionHTML(datos.DISPLAY[criptomonedas][moneda]), moneda);
+        .then(datos => mostrarCotizacionHTML(datos.DISPLAY[criptomonedas][moneda]));
 }
 
 function mostrarCotizacionHTML(cotizacion) {
@@ -63,7 +63,7 @@ function mostrarCotizacionHTML(cotizacion) {
     const precio = document.createElement('p');
     precio.classList.add('precio');
     precio.innerHTML = `
-        El precio es: <span> ${PRICE} ${moneda}</span>
+        El precio es: <span> ${PRICE} </span>
     `
     const precioAlto = document.createElement('p');
     precioAlto.innerHTML = `
